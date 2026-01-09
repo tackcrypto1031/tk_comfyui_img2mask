@@ -1,0 +1,1179 @@
+{
+  "id": "5f3e364e-2543-4278-8520-734ddfdbc44d",
+  "revision": 0,
+  "last_node_id": 87,
+  "last_link_id": 152,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "SeedVR2LoadVAEModel",
+      "pos": [
+        7375.658548615759,
+        -1108.9928992815771
+      ],
+      "size": [
+        321.808203125,
+        298
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "torch编译参数",
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SeedVR2 VAE模型",
+          "name": "SEEDVR2_VAE",
+          "type": "SEEDVR2_VAE",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "d69b65f7e42f153e3f0a6be1de7f5a02ab5d1faa",
+        "Node name for S&R": "SeedVR2LoadVAEModel",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "ema_vae_fp16.safetensors",
+        "cuda:0",
+        true,
+        1024,
+        128,
+        true,
+        1024,
+        128,
+        "false",
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 7,
+      "type": "GetImageSize+",
+      "pos": [
+        8035.658548615759,
+        -778.9928992815771
+      ],
+      "size": [
+        140,
+        66
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "label": "宽度",
+          "name": "width",
+          "type": "INT",
+          "links": [
+            10
+          ]
+        },
+        {
+          "label": "高度",
+          "name": "height",
+          "type": "INT",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "获取图像尺寸",
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "9d9f4bedfc9f0321c19faf71855e228c93bd0dc9",
+        "Node name for S&R": "GetImageSize+",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "easy cleanGpuUsed",
+      "pos": [
+        8235.65854861576,
+        -1328.9928992815771
+      ],
+      "size": [
+        161.3404296875,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "输入任何",
+          "name": "anything",
+          "type": "*",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "label": "输出",
+          "name": "output",
+          "type": "*",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "e900c2ca9c0d90b0896881910ca7f3f02d88ebd8",
+        "Node name for S&R": "easy cleanGpuUsed",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        7385.658548615759,
+        -1348.9928992815771
+      ],
+      "size": [
+        317.5630859375,
+        202
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "torch编译参数",
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SeedVR2 DiT模型",
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "d69b65f7e42f153e3f0a6be1de7f5a02ab5d1faa",
+        "Node name for S&R": "SeedVR2LoadDiTModel",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "seedvr2_ema_7b_fp16.safetensors",
+        "cuda:0",
+        36,
+        false,
+        "cpu",
+        false,
+        "sdpa"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "SeedVR2VideoUpscaler",
+      "pos": [
+        7867.273366545251,
+        -1363.7626903600337
+      ],
+      "size": [
+        277.0309772821348,
+        386
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 25
+        },
+        {
+          "name": "dit",
+          "type": "SEEDVR2_DIT",
+          "link": 26
+        },
+        {
+          "name": "vae",
+          "type": "SEEDVR2_VAE",
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "912ab4a5da8bb3590c4659f8f19160a7bd88a656",
+        "Node name for S&R": "SeedVR2VideoUpscaler",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        777,
+        "fixed",
+        2048,
+        4500,
+        1,
+        false,
+        "lab",
+        0,
+        0,
+        0,
+        0,
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        6895.658548615759,
+        -1358.9928992815771
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1,
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "Node name for S&R": "ImageScaleToTotalPixels",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "lanczos",
+        16
+      ]
+    },
+    {
+      "id": 2,
+      "type": "TTP_Tile_image_size",
+      "pos": [
+        6973.336285614071,
+        -1033.1642174019548
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "label": "瓦片宽度",
+          "name": "tile_width",
+          "type": "INT",
+          "links": [
+            3
+          ]
+        },
+        {
+          "label": "瓦片高度",
+          "name": "tile_height",
+          "type": "INT",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ttp_toolset",
+        "ver": "08fb8b9808b844a0137399b6fd34eec1e13e62d3",
+        "Node name for S&R": "TTP_Tile_image_size",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        2,
+        3,
+        0.1
+      ]
+    },
+    {
+      "id": 3,
+      "type": "TTP_Image_Tile_Batch",
+      "pos": [
+        7411.72497060562,
+        -717.5239355285349
+      ],
+      "size": [
+        270,
+        142
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "label": "瓦片宽度",
+          "name": "tile_width",
+          "type": "INT",
+          "widget": {
+            "name": "tile_width"
+          },
+          "link": 3
+        },
+        {
+          "label": "瓦片高度",
+          "name": "tile_height",
+          "type": "INT",
+          "widget": {
+            "name": "tile_height"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGES",
+          "type": "IMAGE",
+          "links": [
+            8,
+            25
+          ]
+        },
+        {
+          "label": "位置",
+          "name": "POSITIONS",
+          "type": "LIST",
+          "links": [
+            14
+          ]
+        },
+        {
+          "label": "原始尺寸",
+          "name": "ORIGINAL_SIZE",
+          "type": "TUPLE",
+          "links": [
+            15
+          ]
+        },
+        {
+          "label": "网格大小",
+          "name": "GRID_SIZE",
+          "type": "TUPLE",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ttp_toolset",
+        "ver": "08fb8b9808b844a0137399b6fd34eec1e13e62d3",
+        "Node name for S&R": "TTP_Image_Tile_Batch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 8,
+      "type": "ImageResize+",
+      "pos": [
+        8238.738827377252,
+        -1183.2114023214858
+      ],
+      "size": [
+        270,
+        218
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9
+        },
+        {
+          "label": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 10
+        },
+        {
+          "label": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "label": "宽度",
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "高度",
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "图像缩放",
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "9d9f4bedfc9f0321c19faf71855e228c93bd0dc9",
+        "Node name for S&R": "ImageResize+",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        512,
+        512,
+        "lanczos",
+        "stretch",
+        "always",
+        0
+      ]
+    },
+    {
+      "id": 10,
+      "type": "TTP_Image_Assy",
+      "pos": [
+        8598.738827377252,
+        -1120.6050693633256
+      ],
+      "size": [
+        324.73828125,
+        118
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "瓦片图像",
+          "name": "tiles",
+          "type": "IMAGE",
+          "link": 13
+        },
+        {
+          "label": "位置",
+          "name": "positions",
+          "type": "LIST",
+          "link": 14
+        },
+        {
+          "label": "原始尺寸",
+          "name": "original_size",
+          "type": "TUPLE",
+          "link": 15
+        },
+        {
+          "label": "网格大小",
+          "name": "grid_size",
+          "type": "TUPLE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "label": "拼接/重组后的图像",
+          "name": "RECONSTRUCTED_IMAGE",
+          "type": "IMAGE",
+          "links": [
+            111,
+            114
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ttp_toolset",
+        "ver": "08fb8b9808b844a0137399b6fd34eec1e13e62d3",
+        "Node name for S&R": "TTP_Image_Assy",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        64
+      ]
+    },
+    {
+      "id": 13,
+      "type": "LoadImage",
+      "pos": [
+        6568.558127943564,
+        -1185.7644099629651
+      ],
+      "size": [
+        270,
+        314
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            19,
+            140
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            141
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.6.0",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5"
+        }
+      },
+      "widgets_values": [
+        "f62a02cb9be571ba147f75c6fa26f51625102c494537e-ADefye.png",
+        "image"
+      ]
+    },
+    {
+      "id": 82,
+      "type": "TK_Image2Mask",
+      "pos": [
+        8508.512933325812,
+        -1376.571887408173
+      ],
+      "size": [
+        301.66953125,
+        78
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 140
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            151
+          ]
+        },
+        {
+          "name": "mask_image",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TK_Image2Mask",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5"
+        }
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 84,
+      "type": "JWMaskResize",
+      "pos": [
+        8948.523933703518,
+        -852.8634290262041
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 151
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 150
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            145
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-various",
+        "ver": "5bd85aaf7616878471469c4ec7e11bbd0cef3bf2",
+        "Node name for S&R": "JWMaskResize",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5"
+        }
+      },
+      "widgets_values": [
+        512,
+        512,
+        "bicubic"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "GetImageSize",
+      "pos": [
+        8621.11948808642,
+        -854.9748980318853
+      ],
+      "size": [
+        228.4486434536393,
+        136
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 114
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            149
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            150
+          ]
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "GetImageSize",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 64,
+      "type": "AILab_SDMatte",
+      "pos": [
+        9008.906086808547,
+        -1366.7566409563162
+      ],
+      "size": [
+        300,
+        350
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 111
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 145
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            139
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "MASK_IMAGE",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-rmbg",
+        "ver": "2.9.5",
+        "Node name for S&R": "AILab_SDMatte",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5"
+        }
+      },
+      "widgets_values": [
+        "SDMatte",
+        "Auto",
+        1024,
+        true,
+        true,
+        0.9,
+        1,
+        -1,
+        false,
+        "Alpha",
+        "#222222"
+      ],
+      "color": "#2e3e57",
+      "bgcolor": "#4b5b73"
+    },
+    {
+      "id": 83,
+      "type": "SaveImage",
+      "pos": [
+        9353.005009970748,
+        -1362.3974196292327
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 139
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5"
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      2,
+      0,
+      3,
+      1,
+      "INT"
+    ],
+    [
+      4,
+      2,
+      1,
+      3,
+      2,
+      "INT"
+    ],
+    [
+      8,
+      3,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      9,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      7,
+      0,
+      8,
+      1,
+      "INT"
+    ],
+    [
+      11,
+      7,
+      1,
+      8,
+      2,
+      "INT"
+    ],
+    [
+      13,
+      8,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      3,
+      1,
+      10,
+      1,
+      "LIST"
+    ],
+    [
+      15,
+      3,
+      2,
+      10,
+      2,
+      "TUPLE"
+    ],
+    [
+      16,
+      3,
+      3,
+      10,
+      3,
+      "TUPLE"
+    ],
+    [
+      19,
+      13,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      3,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      26,
+      4,
+      0,
+      15,
+      1,
+      "SEEDVR2_DIT"
+    ],
+    [
+      27,
+      5,
+      0,
+      15,
+      2,
+      "SEEDVR2_VAE"
+    ],
+    [
+      28,
+      15,
+      0,
+      9,
+      0,
+      "*"
+    ],
+    [
+      111,
+      10,
+      0,
+      64,
+      0,
+      "IMAGE"
+    ],
+    [
+      114,
+      10,
+      0,
+      66,
+      0,
+      "IMAGE"
+    ],
+    [
+      139,
+      64,
+      0,
+      83,
+      0,
+      "IMAGE"
+    ],
+    [
+      140,
+      13,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      141,
+      13,
+      1,
+      82,
+      1,
+      "MASK"
+    ],
+    [
+      145,
+      84,
+      0,
+      64,
+      1,
+      "MASK"
+    ],
+    [
+      149,
+      66,
+      0,
+      84,
+      2,
+      "INT"
+    ],
+    [
+      150,
+      66,
+      1,
+      84,
+      1,
+      "INT"
+    ],
+    [
+      151,
+      82,
+      0,
+      84,
+      0,
+      "MASK"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.5209868481924372,
+      "offset": [
+        -5816.599042950817,
+        2228.551351903803
+      ]
+    },
+    "frontendVersion": "1.28.8",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
