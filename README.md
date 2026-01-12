@@ -1,6 +1,6 @@
 # TK ComfyUI Image to Mask
 
-A dedicated ComfyUI custom node designed to streamline the process of converting transparent images (RGBA) into masks and high-quality mask previews.
+A dedicated ComfyUI custom node designed to streamline the process of converting transparent images (RGBA) into masks and high-quality mask previews. 
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![ComfyUI](https://img.shields.io/badge/ComfyUI-Custom--Node-orange.svg)
