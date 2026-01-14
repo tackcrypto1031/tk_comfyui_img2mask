@@ -54,4 +54,5 @@ We have included example workflows to help you get started quickly. You can find
 To use them, simply drag and drop the JSON file into your ComfyUI interface.
 
 ## 📝 License
-This project is licensed under the MIT License.
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
