@@ -1,0 +1,17 @@
+[project]
+name = "tk-comfyui-img2mask"
+description = "ComfyUI custom node that converts transparent images (RGBA) into masks and visual previews"
+version = "1.0.0"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+]
+
+[project.urls]
+Repository = "https://github.com/tackcrypto1031/tk_comfyui_img2mask"
+
+[tool.comfy]
+PublisherId = "tackcrypto1031"
+DisplayName = "Transparent Image to Mask (TK)"
+Icon = ""
